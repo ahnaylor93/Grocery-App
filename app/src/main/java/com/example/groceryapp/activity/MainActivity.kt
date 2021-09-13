@@ -1,6 +1,7 @@
 package com.example.groceryapp.activity
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -10,8 +11,9 @@ import com.example.groceryapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     companion object {
-    private const val LAUNCH_LOGIN_SCREEN: Int = 200
-}
+        private const val LAUNCH_LOGIN_SCREEN: Int = 200
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -22,11 +24,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    val handler = object: Handler(){
+    val handler = object : Handler() {
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
-            if(msg.what == LAUNCH_LOGIN_SCREEN){
-                startActivity(Intent(baseContext, LoginActivity::class.java))
+            if (msg.what == LAUNCH_LOGIN_SCREEN) {
+                val sharedPref = getSharedPreferences("app_settings", MODE_PRIVATE)
+                if (sharedPref.getString("firstname", "") == "") {
+                    startActivity(Intent(baseContext, LoginActivity::class.java))
+                } else {
+                    startActivity(Intent(baseContext, HomeActivity::class.java))
+                }
             }
         }
     }

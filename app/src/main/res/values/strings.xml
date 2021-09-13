@@ -8,4 +8,14 @@
     <string name="btn_signin">Sign In</string>
     <string name="btn_register">Need an account?</string>
     <string name="btn_forgot_password">Forgot Passwrod?</string>
+    <string name="register_title">Create an Account</string>
+    <string name="first_name">First Name</string>
+    <string name="address">Address</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="btn_signup">Sign Up</string>
+    <string name="btn_login">Already Have An Account?</string>
+    <string name="btn_register_login">Already have an account?</string>
 </resources>
