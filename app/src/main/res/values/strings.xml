@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Grocery App</string>
+    <string name="login_title">Sign in with mobile</string>
+    <string name="hint_mobile">Mobile</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="btn_signin">Sign In</string>
+    <string name="btn_register">Need an account?</string>
+    <string name="btn_forgot_password">Forgot Passwrod?</string>
 </resources>
