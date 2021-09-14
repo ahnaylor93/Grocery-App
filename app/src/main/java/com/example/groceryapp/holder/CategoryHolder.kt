@@ -16,11 +16,13 @@ class CategoryHolder(val binding: FragmentHolderCategoryBinding): RecyclerView.V
     fun bind(category: Category, imageLoader: ImageLoader){
         tvCategory.text = category.catName
         tvDesc.text = category.catDescription
-
         imageLoader.get(
             "https://rjtmobile.com/grocery/images/${category.catImage}",
             ImageLoader.getImageListener(binding.ivCategoryImage,
             R.drawable.ic_default, R.drawable.ic_error)
         )
+        binding.ivCategoryImage.setImageUrl(
+            "https://rjtmobile.com/grocery/images/${category.catImage}",
+        imageLoader)
     }
 }

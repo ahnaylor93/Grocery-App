@@ -2,11 +2,11 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_small"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:padding="@dimen/padding_common"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvCategory"
             app:layout_constraintStart_toEndOf="@id/ivCategoryImage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/ivCategoryImage"
             android:layout_width="0dp"
             android:layout_height="0dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>

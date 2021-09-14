@@ -50,12 +50,11 @@ class HomeActivity : AppCompatActivity() {
         }
 
         override fun putBitmap(url: String?, bitmap: Bitmap?) {
-            lruCache.put(url, bitmap)
+            //lruCache.put(url, bitmap)
 
-            /*
             url?.let{
                 lruCache.put(it, bitmap)
-            }*/
+            }
         }
     }
 
