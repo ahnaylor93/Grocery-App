@@ -18,4 +18,5 @@
     <string name="btn_signup">Sign Up</string>
     <string name="btn_login">Already Have An Account?</string>
     <string name="btn_register_login">Already have an account?</string>
+    <string name="action_cart">Cart</string>
 </resources>
