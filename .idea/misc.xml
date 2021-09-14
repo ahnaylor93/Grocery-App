@@ -4,12 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/drawable/ic_cart_logo.xml" value="0.10740740740740741" />
+        <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_category_item.xml" value="0.19479166666666667" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_home.xml" value="0.13994565217391305" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/fragment_holder_category.xml" value="0.25" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/fragment_register.xml" value="0.1" />
+        <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/menu/activity_home_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

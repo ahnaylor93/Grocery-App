@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         val twoSeconds = 1000L * 2
         handler.sendEmptyMessageDelayed(LAUNCH_LOGIN_SCREEN, twoSeconds)
-
     }
 
     val handler = object : Handler() {
