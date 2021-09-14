@@ -50,6 +50,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         override fun putBitmap(url: String?, bitmap: Bitmap?) {
+            lruCache.put(url, bitmap)
 
             /*
             url?.let{
@@ -68,7 +69,7 @@ class HomeActivity : AppCompatActivity() {
                 val type = object: TypeToken<ArrayList<Category>>() {}.type
 
                 categories = gson.fromJson(categoriesJSON, type)
-                adapter = CategoryAdapter(categories/*, imageLoader*/)
+                adapter = CategoryAdapter(categories, imageLoader)
 
                 adapter.setOnCategoryClickListener{ category, position ->
                     val subCategoryIntent = Intent(baseContext, SubCategoryActivity::class.java)
