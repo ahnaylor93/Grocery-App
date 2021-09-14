@@ -38,6 +38,7 @@
     <EditText
         android:id="@+id/etEmail"
         android:hint="@string/hint_email"
+        android:inputType="text"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintTop_toBottomOf="@id/tvLoginTitle"
         android:layout_marginHorizontal="@dimen/margin_small"
@@ -46,8 +47,9 @@
     <EditText
         android:id="@+id/etPassword"
         android:hint="@string/hint_password"
+        android:inputType="textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintTop_toBottomOf="@id/tvLoginTitle"
+        app:layout_constraintTop_toBottomOf="@id/etEmail"
         android:layout_marginHorizontal="@dimen/margin_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -67,7 +69,7 @@
         android:textColor="@color/white"
         android:layout_marginHorizontal="@dimen/margin_small"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintTop_toBottomOf="@id/guideline_mid"
+        app:layout_constraintTop_toBottomOf="@id/cbxRememberMe"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
@@ -78,8 +80,9 @@
         android:background="@color/white"
         android:textColor="@color/pink"
         android:layout_marginHorizontal="@dimen/margin_small"
+        android:layout_marginVertical="@dimen/margin_small"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintTop_toBottomOf="@id/guideline_mid"
+        app:layout_constraintTop_toBottomOf="@id/btnSignIn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"

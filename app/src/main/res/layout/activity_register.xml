@@ -29,6 +29,7 @@
     <EditText
         android:id="@+id/etFirstName"
         android:hint="@string/hint_first_name"
+        android:inputType="text"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintTop_toBottomOf="@id/tvRegisterTitle"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +40,7 @@
     <EditText
         android:id="@+id/etMobile"
         android:hint="@string/hint_mobile"
+        android:inputType="phone"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintTop_toBottomOf="@id/etFirstName"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +51,7 @@
     <EditText
         android:id="@+id/etEmail"
         android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintTop_toBottomOf="@id/etMobile"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +75,7 @@
         android:hint="@string/hint_confirm_password"
         android:inputType="textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="@dimen/margin_small"
@@ -88,19 +91,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginHorizontal="@dimen/margin_small"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btnLogin"
         android:text="@string/btn_register_login"
         android:textColor="@color/pink"
         android:background="@color/white"
+        android:layout_marginVertical="@dimen/margin_small"
         app:layout_constraintTop_toBottomOf="@id/btnRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginHorizontal="@dimen/margin_small"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,9 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -54,26 +56,30 @@ class LoginActivity : AppCompatActivity() {
         loginRequestData.put("password", password)
 
         val request = JsonObjectRequest(
-            Request.Method.GET,
+            Request.Method.POST,
             "https://grocery-second-app.herokuapp.com/api/auth/login",
             loginRequestData,
             Response.Listener<JSONObject>{ response ->
-                if(response.getBoolean("error")){
+                Log.d("response", response.toString())
+                if(response.has("error") && response.getBoolean("error")){
                     Toast.makeText(baseContext, "Invalid Login Information, please try again",
                         Toast.LENGTH_LONG).show()
                 }else{
-                    val sharedPref = getSharedPreferences("app_settings", MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = sharedPref.edit()
-                    editor.putString("firstname", response.getString("firstname"))
+                    if(binding.cbxRememberMe.isChecked()){
+                        val sharedPref = getSharedPreferences("app_settings", MODE_PRIVATE)
+                        val editor: SharedPreferences.Editor = sharedPref.edit()
+                        val firstName = response.getJSONObject("user").getString("firstName")
+                        editor.putString("firstName", firstName)
+                    }
                     startActivity(Intent(baseContext, HomeActivity::class.java))
                 }
-
             },
             Response.ErrorListener { error ->
                 error.printStackTrace()
-                Toast.makeText(baseContext, "Error is: $error", Toast.LENGTH_LONG).show()
+                Toast.makeText(baseContext, "Error: $error", Toast.LENGTH_LONG).show()
             }
         )
+        request.retryPolicy = DefaultRetryPolicy(10 * 1000, 1, 1.0f)
         requestQueue.add(request)
     }
 }

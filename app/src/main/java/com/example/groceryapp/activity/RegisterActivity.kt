@@ -80,14 +80,14 @@ class RegisterActivity : AppCompatActivity() {
             registerRequestData.put("password", password)
 
             val request = JsonObjectRequest(
-                Request.Method.PUT,
+                Request.Method.POST,
                 "https://grocery-second-app.herokuapp.com/api/auth/register",
                 registerRequestData,
                 Response.Listener { response ->
-                    if(!response.getBoolean("error")){
-                        Toast.makeText(baseContext, "Account registered successfully.", Toast.LENGTH_LONG).show()
-                    }else{
+                    if(response.has("error") && response.getBoolean("error")){
                         Toast.makeText(baseContext, "Account registration failed: ${response.getString("message")}", Toast.LENGTH_LONG).show()
+                    }else{
+                        Toast.makeText(baseContext, "Account Registered Successfully", Toast.LENGTH_LONG).show()
                     }
                 },
                 Response.ErrorListener { error ->
@@ -95,6 +95,8 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(baseContext, "Error is: $error", Toast.LENGTH_LONG).show()
                 }
 
-        )}else return
+        )
+        requestQueue.add(request)
+        }else return
     }
 }
