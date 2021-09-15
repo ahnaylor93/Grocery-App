@@ -4,14 +4,14 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Category(
-    val _id: String,
+    val catId: Int,
     val catImage: String,
     val catDescription: String,
     val catName: String
 ): Parcelable {
 
     constructor(parcel: Parcel) : this(
-        parcel.readString()?: "",
+        parcel.readInt()?: -1,
         parcel.readString()?: "",
         parcel.readString()?: "",
         parcel.readString()?: ""
@@ -19,7 +19,7 @@ data class Category(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(_id)
+        parcel.writeInt(catId)
         parcel.writeString(catImage)
         parcel.writeString(catDescription)
         parcel.writeString(catName)

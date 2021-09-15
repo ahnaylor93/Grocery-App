@@ -50,8 +50,6 @@ class HomeActivity : AppCompatActivity() {
         }
 
         override fun putBitmap(url: String?, bitmap: Bitmap?) {
-            //lruCache.put(url, bitmap)
-
             url?.let{
                 lruCache.put(it, bitmap)
             }
@@ -72,7 +70,7 @@ class HomeActivity : AppCompatActivity() {
 
                 adapter.setOnCategoryClickListener{ category, position ->
                     val subCategoryIntent = Intent(baseContext, SubCategoryActivity::class.java)
-                    subCategoryIntent.putExtra("category", category)
+                    subCategoryIntent.putExtra("catId", category.catId)
                     startActivity(subCategoryIntent)
                 }
                 binding.rvCategories.adapter = adapter
