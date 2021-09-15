@@ -21,7 +21,7 @@
             android:id="@+id/tvProductName"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Category Title"
+            tools:text="Product Name"
             app:layout_constraintStart_toEndOf="@id/ivProductImage"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
