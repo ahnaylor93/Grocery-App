@@ -65,11 +65,11 @@ class SubCategoryActivity : AppCompatActivity() {
             "https://grocery-second-app.herokuapp.com/api/subcategory/$catId",
             Response.Listener<JSONObject> { response ->
 
-                val categoriesJSON = response.getJSONArray("data").toString()
+                val subcategoriesJSON = response.getJSONArray("data").toString()
                 val gson = Gson()
                 val type = object: TypeToken<ArrayList<SubCategory>>() {}.type
 
-                subcategories = gson.fromJson(categoriesJSON, type)
+                subcategories = gson.fromJson(subcategoriesJSON, type)
                 adapter = SubCategoryAdapter(subcategories, imageLoader)
 
                 adapter.setOnSubcategoryClickListener(){ subcategory, position ->
