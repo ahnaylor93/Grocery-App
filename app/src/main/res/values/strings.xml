@@ -20,4 +20,9 @@
     <string name="btn_register_login">Already have an account?</string>
     <string name="action_cart">Cart</string>
     <string name="btn_add_to_cart">Add To Cart</string>
+    <string name="btn_view_cart">View Cart</string>
+    <string name="btn_checkout">Checkout</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_minus">-</string>
+    <string name="btn_remove">Remove</string>
 </resources>

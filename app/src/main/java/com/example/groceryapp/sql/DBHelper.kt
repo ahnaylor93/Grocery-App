@@ -13,6 +13,7 @@ class DBHelper(val context: Context): SQLiteOpenHelper(context, "CartDB", null, 
             itemId INTEGER PRIMARY KEY AUTOINCREMENT,
             productId TEXT,
             productName TEXT,
+            image TEXT,
             quantity INTEGER,
             price DOUBLE)"""
     }
