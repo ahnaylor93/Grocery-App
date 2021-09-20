@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.widget.Toast
 import com.example.groceryapp.data.CartItem
 import com.example.groceryapp.data.Product
 import java.sql.SQLException
@@ -58,6 +59,20 @@ class CartDao(val context: Context) {
         val numberRowsDeleted = db.delete("cart", "itemId = $itemId", null)
 
         return numberRowsDeleted == 1
+    }
+
+    fun clearCart() {
+        try {
+
+            val cartList = getItems()
+            cartList.forEach {
+                deleteItem(it.itemId)
+            }
+        }catch(e: SQLException){
+            e.printStackTrace()
+            Toast.makeText(context, "An error occured while deleting cart items: ${e.message}",
+            Toast.LENGTH_LONG).show()
+        }
     }
 
     fun updateItem(cartItem: CartItem): Boolean {

@@ -2,6 +2,7 @@ package com.example.groceryapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.groceryapp.adapter.CartItemAdapter
@@ -31,44 +32,25 @@ class ViewCartActivity : AppCompatActivity() {
         binding.rvCart.layoutManager = LinearLayoutManager(baseContext)
 
         populateList()
+
+        binding.btnPrint.setOnClickListener{
+            Toast.makeText(baseContext, "TEST", Toast.LENGTH_LONG).show()
+            Log.d("DATABASE","$cartItems")
+        }
+
+        binding.btnCheckout.setOnClickListener{
+            checkout()
+        }
+    }
+
+    private fun checkout() {
+
     }
 
     private fun populateList() {
-       adapter = CartItemAdapter(cartItems)
+       adapter = CartItemAdapter(cartItems, cartDao)
 
-        adapter.setOnAddClickListener { cartItem, position ->
-            when (cartItem.quantity) {
-                0 -> {
-                    cartItem.quantity++
-                    adapter.binding.btnSubtract.text = "@string/btn_minus"
-                    adapter.binding.tvQuantity.text = cartItem.quantity.toString()
-                }
-                else -> {
-                    cartItem.quantity++
-                    adapter.binding.tvQuantity.text = cartItem.quantity.toString()
-                }
-            }
-            adapter.notifyItemChanged(position)
-        }
-        adapter.setOnSubtractClickListener { cartItem, position ->
-            when(cartItem.quantity){
-                0 -> { removeItem(position) }
-                1 -> { cartItem.quantity--
-                    adapter.binding.btnSubtract.text = "@string/btn_remove"
-                    adapter.binding.tvQuantity.text = cartItem.quantity.toString()
-                    adapter.notifyItemChanged(position)
-                }
-                else -> {cartItem.quantity--
-                adapter.binding.tvQuantity.text = cartItem.quantity.toString()
-                    adapter.notifyDataSetChanged()
-                }
-            }
-        }
         binding.rvCart.adapter = adapter
     }
 
-    private fun removeItem(position: Int) {
-        Toast.makeText(baseContext, "Remove item:${cartItems[position]}\n At position: $position",
-        Toast.LENGTH_LONG).show()
-    }
 }
