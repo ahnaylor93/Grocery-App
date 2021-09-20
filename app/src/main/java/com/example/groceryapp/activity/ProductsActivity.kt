@@ -5,6 +5,8 @@ import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.LruCache
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.RequestQueue
@@ -12,6 +14,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.ImageLoader
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.groceryapp.R
 import com.example.groceryapp.adapter.ProductAdapter
 import com.example.groceryapp.data.Product
 import com.example.groceryapp.databinding.ActivityProductsBinding
@@ -38,7 +41,7 @@ class ProductsActivity : AppCompatActivity() {
 
         subId = intent.extras?.getInt("subId")?:-1
 
-        requestQueue = Volley.newRequestQueue((baseContext))
+        requestQueue = Volley.newRequestQueue(baseContext)
         imageLoader = ImageLoader(requestQueue, cache)
         binding.rvProducts.layoutManager = LinearLayoutManager(baseContext)
 
@@ -84,5 +87,27 @@ class ProductsActivity : AppCompatActivity() {
             }
         ){}
         requestQueue.add(request)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_home_menu, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.action_cart -> {
+                val cartIntent = Intent(baseContext, ViewCartActivity::class.java)
+                startActivity(cartIntent)
+            }
+            R.id.action_orders -> {
+                val ordersIntent = Intent(baseContext, ViewOrdersActivity::class.java)
+                startActivity(ordersIntent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

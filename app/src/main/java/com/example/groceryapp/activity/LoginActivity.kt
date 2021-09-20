@@ -69,7 +69,10 @@ class LoginActivity : AppCompatActivity() {
                         val sharedPref = getSharedPreferences("app_settings", MODE_PRIVATE)
                         val editor: SharedPreferences.Editor = sharedPref.edit()
                         val firstName = response.getJSONObject("user").getString("firstName")
+                        val userId = response.getJSONObject("user").getString("_id")
                         editor.putString("firstName", firstName)
+                        editor.putString("userId", userId)
+                        editor.apply()
                     }
                     startActivity(Intent(baseContext, HomeActivity::class.java))
                 }

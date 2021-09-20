@@ -93,7 +93,14 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.action_cart -> Toast.makeText(baseContext, "Cart clicked", Toast.LENGTH_LONG).show()
+            R.id.action_cart -> {
+                val cartIntent = Intent(baseContext, ViewCartActivity::class.java)
+                startActivity(cartIntent)
+            }
+            R.id.action_orders -> {
+                val ordersIntent = Intent(baseContext, ViewOrdersActivity::class.java)
+                startActivity(ordersIntent)
+            }
         }
 
         return super.onOptionsItemSelected(item)
