@@ -24,16 +24,6 @@
         app:layout_constraintGuide_percent=".8"
         android:orientation="horizontal"/>
 
-
-    <Button
-        android:id="@+id/btnPrint"
-        android:text="PRINT"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@id/btnCheckout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btnCheckout"
         android:text="@string/btn_checkout"

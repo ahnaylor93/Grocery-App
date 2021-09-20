@@ -25,4 +25,7 @@
     <string name="btn_plus">+</string>
     <string name="btn_minus">-</string>
     <string name="btn_remove">Remove</string>
+    <string name="action_orders">Orders</string>
+    <string name="action_categories">Categories</string>
+    <string name="action_logout">Logout</string>
 </resources>

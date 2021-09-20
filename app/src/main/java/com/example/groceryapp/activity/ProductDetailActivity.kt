@@ -16,6 +16,8 @@ import org.json.JSONObject
 import android.graphics.BitmapFactory
 import android.icu.number.NumberFormatter.with
 import android.icu.number.NumberRangeFormatter.with
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.example.groceryapp.data.CartItem
 import com.example.groceryapp.sql.CartDao
@@ -75,5 +77,27 @@ class ProductDetailActivity : AppCompatActivity() {
         binding.btnViewCart.setOnClickListener{
             startActivity(Intent(baseContext, ViewCartActivity::class.java))
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_home_menu, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.action_cart -> {
+                val cartIntent = Intent(baseContext, ViewCartActivity::class.java)
+                startActivity(cartIntent)
+            }
+            R.id.action_orders -> {
+                val ordersIntent = Intent(baseContext, ViewOrdersActivity::class.java)
+                startActivity(ordersIntent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

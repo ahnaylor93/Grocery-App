@@ -15,6 +15,7 @@
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_sub_category.xml" value="0.371875" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_view_cart.xml" value="0.2" />
+        <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/activity_view_orders.xml" value="0.33152173913043476" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/fragment_cart_item.xml" value="0.1" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/fragment_holder_category.xml" value="0.2" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/fragment_holder_product.xml" value="0.209375" />
@@ -22,7 +23,10 @@
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/holder_cart_item.xml" value="0.22" />
+        <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/holder_order.xml" value="0.1" />
+        <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/layout/nav_header_profile.xml" value="0.1" />
         <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/menu/activity_home_menu.xml" value="0.16" />
+        <entry key="..\:/Apolis/Android/GroceryApp/app/src/main/res/menu/side_navigation_menu.xml" value="0.2" />
       </map>
     </option>
   </component>

@@ -28,7 +28,9 @@ class MainActivity : AppCompatActivity() {
             super.handleMessage(msg)
             if (msg.what == LAUNCH_LOGIN_SCREEN) {
                 val sharedPref = getSharedPreferences("app_settings", MODE_PRIVATE)
-                if(sharedPref.contains("firstname")) {
+                startActivity(Intent(baseContext, LoginActivity::class.java))
+
+                if(!sharedPref.contains("userId")) {
                     startActivity(Intent(baseContext, LoginActivity::class.java))
                 } else {
                     startActivity(Intent(baseContext, HomeActivity::class.java))
