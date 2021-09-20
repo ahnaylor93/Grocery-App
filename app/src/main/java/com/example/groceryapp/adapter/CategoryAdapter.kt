@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.toolbox.ImageLoader
 import com.example.groceryapp.data.Category
-import com.example.groceryapp.databinding.FragmentHolderCategoryBinding
+import com.example.groceryapp.databinding.HolderCategoryBinding
 import com.example.groceryapp.holder.CategoryHolder
 
 class CategoryAdapter(val categoryList: ArrayList<Category>, val imgLoader: ImageLoader): RecyclerView.Adapter<CategoryHolder>() {
@@ -18,7 +18,7 @@ class CategoryAdapter(val categoryList: ArrayList<Category>, val imgLoader: Imag
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = FragmentHolderCategoryBinding.inflate(layoutInflater, parent, false)
+        val binding = HolderCategoryBinding.inflate(layoutInflater, parent, false)
         return CategoryHolder(binding)
     }
 

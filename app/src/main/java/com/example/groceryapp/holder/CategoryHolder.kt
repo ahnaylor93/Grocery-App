@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.toolbox.ImageLoader
 import com.example.groceryapp.R
 import com.example.groceryapp.data.Category
-import com.example.groceryapp.databinding.FragmentHolderCategoryBinding
+import com.example.groceryapp.databinding.HolderCategoryBinding
 
-class CategoryHolder(val binding: FragmentHolderCategoryBinding): RecyclerView.ViewHolder(binding.root) {
+class CategoryHolder(val binding: HolderCategoryBinding): RecyclerView.ViewHolder(binding.root) {
 
     val tvCategory = binding.tvCategory
     val tvDesc = binding.tvCategoryDesc
