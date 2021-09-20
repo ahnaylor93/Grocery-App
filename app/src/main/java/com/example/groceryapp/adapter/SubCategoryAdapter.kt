@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.toolbox.ImageLoader
 import com.example.groceryapp.data.SubCategory
-import com.example.groceryapp.databinding.FragmentHolderSubcategoryBinding
+import com.example.groceryapp.databinding.HolderSubcategoryBinding
 import com.example.groceryapp.holder.SubCategoryHolder
 
 class SubCategoryAdapter(val subcategoryList: ArrayList<SubCategory>, val imgLoader: ImageLoader): RecyclerView.Adapter<SubCategoryHolder>() {
@@ -18,7 +18,7 @@ class SubCategoryAdapter(val subcategoryList: ArrayList<SubCategory>, val imgLoa
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubCategoryHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = FragmentHolderSubcategoryBinding.inflate(layoutInflater, parent, false)
+        val binding = HolderSubcategoryBinding.inflate(layoutInflater, parent, false)
         return SubCategoryHolder(binding)
     }
 
